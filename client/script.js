@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(message.message);
             updateStatus(message.current_turn);
             if (message.message === 'Game over') {
-                // Show game over UI and option to start a new game
             }
         } else if (message.type === 'error') {
             alert(message.message);
@@ -55,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function sendDeployment() {
-        const positions = ['P', 'P', 'P', 'H1', 'H2']; // Example deployment for player A
+        const positions = ['P', 'P', 'P', 'H1', 'H2']; 
         sendMessage({ type: 'deploy', data: positions });
     }
 
