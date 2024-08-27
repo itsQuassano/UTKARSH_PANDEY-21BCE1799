@@ -1,106 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta information about the document -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the webpage -->
     <title>Turn-Based Chess-like Game</title>
     <style>
+        /* Basic styles for the body element */
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
+            font-family: Arial, sans-serif; /* Sets the font for the page */
+            display: flex; /* Uses flexbox layout */
+            justify-content: center; /* Centers content horizontally */
+            align-items: center; /* Centers content vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Removes default margin */
+            background-color: #f0f0f0; /* Light gray background color */
         }
 
+        /* Container for the game content */
         .game-container {
-            text-align: center;
-            width: 320px;
+            text-align: center; /* Centers text within the container */
+            width: 320px; /* Fixed width for the game container */
         }
 
+        /* Styling for the main heading */
         h1 {
-            margin-bottom: 20px;
-            font-size: 24px;
+            margin-bottom: 20px; /* Space below the heading */
+            font-size: 24px; /* Font size for the heading */
         }
 
+        /* Styling for the game status message */
         .status {
-            margin-bottom: 20px;
-            font-size: 18px;
+            margin-bottom: 20px; /* Space below the status message */
+            font-size: 18px; /* Font size for the status message */
         }
 
+        /* Styling for the game board */
         .game-board {
-            display: grid;
-            grid-template-columns: repeat(5, 50px);
-            grid-template-rows: repeat(5, 50px);
-            gap: 5px;
-            margin-bottom: 20px;
+            display: grid; /* Uses grid layout for the board */
+            grid-template-columns: repeat(5, 50px); /* 5 columns of 50px each */
+            grid-template-rows: repeat(5, 50px); /* 5 rows of 50px each */
+            gap: 5px; /* Gap between grid items */
+            margin-bottom: 20px; /* Space below the game board */
         }
 
+        /* Styling for individual cells in the game board */
         .game-board div {
-            border: 1px solid #000;
-            width: 50px;
-            height: 50px;
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border: 1px solid #000; /* Black border around cells */
+            width: 50px; /* Fixed width for cells */
+            height: 50px; /* Fixed height for cells */
+            box-sizing: border-box; /* Includes border in width and height */
+            display: flex; /* Uses flexbox layout within cells */
+            align-items: center; /* Centers content vertically in cells */
+            justify-content: center; /* Centers content horizontally in cells */
         }
 
+        /* Background color for empty cells */
         .cell.empty {
-            background-color: #f9f9f9;
+            background-color: #f9f9f9; /* Light gray background */
         }
 
+        /* Background color for cells occupied by player A */
         .cell.player-a {
-            background-color: #ffcccc;
+            background-color: #ffcccc; /* Light red background */
         }
 
+        /* Background color for cells occupied by player B */
         .cell.player-b {
-            background-color: #ccccff;
+            background-color: #ccccff; /* Light blue background */
         }
 
+        /* Styling for move controls section */
         .move-controls {
-            margin-top: 20px;
+            margin-top: 20px; /* Space above the move controls */
         }
 
+        /* Styling for the move options buttons */
         .move-options {
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* Space below the move options */
         }
 
         .move-options button {
-            padding: 10px 15px;
-            margin: 5px;
-            font-size: 14px;
-            cursor: pointer;
+            padding: 10px 15px; /* Padding inside buttons */
+            margin: 5px; /* Space around buttons */
+            font-size: 14px; /* Font size for button text */
+            cursor: pointer; /* Pointer cursor on hover */
         }
 
+        /* Styling for the move history section */
         .move-history {
-            text-align: left;
+            text-align: left; /* Aligns text to the left */
         }
 
         .move-history h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 18px; /* Font size for the history heading */
+            margin-bottom: 10px; /* Space below the heading */
         }
 
         .move-history ul {
-            list-style-type: none;
-            padding: 0;
+            list-style-type: none; /* Removes bullets from the list */
+            padding: 0; /* Removes padding from the list */
         }
 
         .move-history li {
-            font-size: 14px;
-            margin-bottom: 5px;
+            font-size: 14px; /* Font size for list items */
+            margin-bottom: 5px; /* Space below each list item */
         }
     </style>
 </head>
 <body>
+    <!-- Main container for the game -->
     <div class="game-container">
+        <!-- Main heading for the game -->
         <h1>Turn-Based Chess-like Game</h1>
+        <!-- Status message indicating whose turn it is -->
         <div class="status" id="status">Player A's turn</div>
+        <!-- Grid container for the game board -->
         <div class="game-board" id="game-board"></div>
 
+        <!-- Container for move controls and move history -->
         <div class="move-controls" id="move-controls">
             <div class="move-options">
                 <!-- Example move buttons -->
@@ -117,6 +136,7 @@
             </div>
         </div>
     </div>
+    <!-- Link to the external JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
