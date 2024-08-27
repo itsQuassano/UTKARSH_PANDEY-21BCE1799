@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turn-Based Chess-like Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .game-container {
+            text-align: center;
+            width: 320px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .status {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(5, 50px);
+            grid-template-rows: repeat(5, 50px);
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .game-board div {
+            border: 1px solid #000;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cell.empty {
+            background-color: #f9f9f9;
+        }
+
+        .cell.player-a {
+            background-color: #ffcccc;
+        }
+
+        .cell.player-b {
+            background-color: #ccccff;
+        }
+
+        .move-controls {
+            margin-top: 20px;
+        }
+
+        .move-options {
+            margin-bottom: 20px;
+        }
+
+        .move-options button {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .move-history {
+            text-align: left;
+        }
+
+        .move-history h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .move-history ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .move-history li {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Turn-Based Chess-like Game</h1>
+        <div class="status" id="status">Player A's turn</div>
+        <div class="game-board" id="game-board"></div>
+
+        <div class="move-controls" id="move-controls">
+            <div class="move-options">
+                <!-- Example move buttons -->
+                <button id="move-up">Move Up</button>
+                <button id="move-down">Move Down</button>
+                <button id="move-left">Move Left</button>
+                <button id="move-right">Move Right</button>
+            </div>
+            <div class="move-history">
+                <h3>Move History</h3>
+                <ul id="move-history-list">
+                    <!-- Move history will be appended here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
